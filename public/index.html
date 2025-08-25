@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayaan Alvi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">Ayaan Alvi</div>
+    <div class="navbar-right">
+      <a href="#">Home</a>
+      <a href="dr-cortex.html">Dr.Cortex</a>
+      <a href="neurobuddy.html">NeuroBuddy</a>
+      <a href="gratitude.html">Gratitude</a>
+      <a href="meditation.html">Meditation</a>
+      <a href="pathfinder.html">Pathfinder</a>
+      <a href="reverie.html">Reflection</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-image">
+      <img src="awardslide1.jpeg" alt="Ayaan smiling">
+    </div>
+    <div class="hero-text">
+      <h1>Hi, I'm Ayaan.</h1>
+      <h2>I'll be helping you turn your life around.</h2>
+      <p>Inspiring mindfulness, gratitude, and self-discipline.</p>
+    </div>
+  </section>
+  <section class="about-section">
+  <div class="about-overlay"></div>
+  <div class="about-content">
+    <h2>About Me</h2>
+    <p>
+    <li> 	Hey, I’m Ayaan. I developed this website because I’ve been through the pandemonium—dopamine burnout, self-doubt, identity struggles—and I know how hard it is to find direction when your mind’s not on your side.</li>
+<li>  This platform isn’t about being a guru; it’s about giving people the tools I wish I had.</li>
+<li>  Ranging from meditation and reflection to goal tracking and having a mental health buddy, every module here is curated to help you rewire your brain and rebuild yourself—one day at a time.</li>
+<li>  I have a profound love for neuroscience, not just for the knowledge, but to understand how the brain works.</li>
+<li>  If you’re striving to achieve your true self and become the calm, clear-headed version of yourself—the one who shows up with purpose—you’re in the right place.</li>
+
+
+    </p>
+  </div>
+</section>
+<section class="mission-section">
+  <div class="mission-content fade-in">
+    <h2>My Mission</h2>
+    <p>
+     <li>  This is a platform where neuroscience, AI, and personal experiences coalesce — not for hysteria, but for healing.
+Born from personal battles with depression, this isn’t theory, it’s a war-tested design.
+Every line of code carries intent. Every feature exists to break silence.
+This is the new era of mental health, reassembled — raw, intelligent, and unapologetically human.</li>
+
+
+
+    </p>
+  </div>
+</section>
+<section id="basics" class="fade-section">
+  <h2 class="section-title">Self-Improvement Basics</h2>
+  <div class="basics-container">
+    <div class="basic-box">Meditation</div>
+    <div class="basic-box">Gratitude Journaling</div>
+    <div class="basic-box">Reflection</div>
+    <div class="basic-box">Goal Tracking</div>
+  </div>
+</section>
+<section class="footer-section" id="contact">
+  <div class="footer-container fade-in">
+    <h2>CONTACT:</h2>
+    <p class="contact-name">Ayaan Alvi</p>
+    <p class="contact-company">Alvi &amp; Co</p>
+    <p>
+      <a href="mailto:ayaan.at.alviandco" class="contact-link">ayaan.at.alviandco</a>
+    </p>
+    <p class="contact-phone">03082885544</p>
+  </div>
+</section>
+
+
+<script>
+  const aboutSection = document.querySelector('.about-section');
+
+  window.addEventListener('scroll', () => {
+    const sectionTop = aboutSection.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sectionTop < windowHeight - 100) {
+      aboutSection.classList.add('visible');
+    }
+  });
+  const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.3
+};
+
+const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("visible");
+    appearOnScroll.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+
+  const boxes = document.querySelectorAll('.basic-box');
+
+  const revealOnScroll = () => {
+    const triggerPoint = window.innerHeight * 0.85;
+
+    boxes.forEach((box, index) => {
+      const boxTop = box.getBoundingClientRect().top;
+
+      if (boxTop < triggerPoint) {
+        setTimeout(() => {
+          box.classList.add('visible');
+        }, index * 300); // Delay for each box (300ms apart)
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll); // Trigger on page load too
+
+  
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+fadeElements.forEach(el => observer.observe(el));
+
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <meta charset="UTF-8">
+  <title>Pathfinder AI</title>
+  <link rel="stylesheet" href="pathfinder.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Section 1: Title -->
+    <section class="section" id="title">
+      <h1 class="title" data-aos="fade-up">Pathfinder AI</h1>
+    </section>
+
+    <!-- Section 2: Marcus Aurelius Quote -->
+    <section class="section" id="quote">
+      <blockquote class="quote" data-aos="fade-left">
+        "You have power over your mind, not outside events. Realize this, and you will find strength."
+      </blockquote>
+    </section>
+
+    <!-- Section 3: Why Set Goals -->
+    <section class="section" id="why-goals">
+      <h2 data-aos="fade-up">Why Set Goals?</h2>
+      <p data-aos="fade-up" data-aos-delay="200">
+        Goals give direction to your actions and help align your daily habits with your long term purpose.
+      </p>
+    </section>
+
+    <!-- Section 4: Benefits of Goal Setting -->
+    <section class="section" id="benefits">
+      <h2 data-aos="fade-up">Benefits of Goal Setting</h2>
+      <p data-aos="fade-up" data-aos-delay="200">
+        Setting goals improves focus, builds discipline, increases motivation, and creates measurable success.
+      </p>
+    </section>
+
+    <!-- Section 5: Final CTA -->
+    <section class="section" id="final">
+      <h2 data-aos="fade-up">Let me help you out. 
+        <p>This AI is best suited for goal setting and achievement.</p>
+      </h2>
+
+      <!-- Google Sign-In Button -->
+      <div id="g_id_onload"
+        data-client_id="944237606554-513lco74is9uedgrdvpamc8esmjaromk.apps.googleusercontent.com"
+        data-context="signin"
+        data-ux_mode="popup"
+        data-callback="handleCredentialResponse"
+        data-auto_prompt="false">
+      </div>
+
+      <div class="g_id_signin"
+        data-type="standard"
+        data-shape="pill"
+        data-theme="outline"
+        data-text="continue_with"
+        data-size="large"
+        data-logo_alignment="left">
+      </div>
+
+      <script>
+        function handleCredentialResponse(response) {
+          console.log("Encoded JWT ID token: " + response.credential);
+          // Later: Send to your backend to verify and log user
+        }
+      </script>
+
+      <div class="tools" data-aos="fade-up" data-aos-delay="300" style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 2rem;">
+
+        <!-- Google Sheet -->
+        <iframe 
+          src="https://docs.google.com/spreadsheets/d/151t9nRxKEg8uA6q8M7AE6X1VyfzqjHQ5XgQ7NqXGV80/edit?gid=0#gid=0" 
+          class="tool-iframe" 
+          style="flex: 1; min-width: 300px; height: 500px; border: none;">
+        </iframe>
+
+        <!-- Pathfinder AI Chat -->
+        <div class="chat-container" style="flex: 1; min-width: 300px;">
+          <div id="chat-log" class="chat-log" style="height: 450px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;"></div>
+          <input type="text" id="user-input" placeholder="Ask Pathfinder AI..." style="width: 100%; padding: 10px; margin-bottom: 5px;" />
+          <button onclick="sendToPathfinder()" style="width: 100%; padding: 10px;">Send</button>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="pathfinder.frontend.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 1000 });
+  </script>
+</body>
+</html>

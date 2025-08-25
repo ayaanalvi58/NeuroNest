@@ -1,0 +1,156 @@
+/* === Base Styles === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: url('zenforest.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* === Container & Section Layouts === */
+.container {
+  width: 100%;
+  padding: 2rem 5vw;
+}
+
+.section {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 4rem 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Split Layouts === */
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.left, .right {
+  flex: 1 1 48%;
+  padding: 2rem;
+}
+
+/* === Typography === */
+h1.title {
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #D4AF37; /* gold tone */
+}
+
+blockquote.quote {
+  font-size: 2rem;
+  font-style: italic;
+  text-align: right;
+  opacity: 0.85;
+  color: #EEDC82;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.7rem;
+  line-height: 1.5;
+  max-width: 900px;
+}
+
+/* === Tools Section === */
+.golden-heading {
+  text-align: center;
+  color: gold;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.golden-heading p {
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 1rem;
+  max-width: 800px;
+}
+
+/* === Tools Layout === */
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+}
+
+/* === Timer / Chat Container === */
+.chat-container {
+  flex: 1 1 45%;
+  min-width: 400px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  color: white;
+}
+
+.chat-container input[type="number"] {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #111;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+.chat-container button {
+  background: linear-gradient(to right, #f0e68c, #d4af37);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chat-container button:hover {
+  background: linear-gradient(to right, #f1c40f, #e1b914);
+}
+
+#timer-display {
+  font-size: 3rem;
+  color: gold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* === Iframe Styling === */
+.tool-iframe {
+  flex: 1 1 45%;
+  min-width: 400px;
+  height: 550px;
+  border: 2px solid gold;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+/* === AOS Defaults === */
+[data-aos] {
+  transition-property: transform, opacity;
+  transition-duration: 1s;
+}

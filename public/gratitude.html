@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gratitude AI</title>
+  <link rel="stylesheet" href="gratitude.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div class="container"><!-- Section 1: Hero Section -->
+<section class="section" id="hero">
+  <div class="split">
+    <h1 class="title" data-aos="fade-right">Gratitude AI</h1>
+    <blockquote class="quote" data-aos="fade-left">
+      "Gratitude turns what we have into enough."
+    </blockquote>
+  </div>
+</section>
+
+<!-- Section 2: Why Gratitude & Benefits -->
+<section class="section" id="info">
+  <div class="split">
+    <div class="left" data-aos="fade-up">
+      <h2>Why Gratitude?</h2>
+      <p>Gratitude enhances happiness, builds resilience, and deepens relationships. Practicing it trains your mind to focus on abundance rather than lack.</p>
+    </div>
+    <div class="right" data-aos="fade-up" data-aos-delay="300">
+      <h2>Benefits</h2>
+      <p>Boosts mental health, reduces stress, increases optimism, and improves your overall life satisfaction.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: Gratitude Tools -->
+<section class="section" id="tools">
+  <h2 data-aos="fade-up">Start your practice.<p>This AI is best suited to help you understand the importance of gratitude and develop a consistent practice.</p></h2>
+  <div class="tools" data-aos="fade-up" data-aos-delay="300">
+
+    <!-- Gratitude AI Chat -->
+    <div class="chat-container">
+      <div id="chat-log" class="chat-log"></div>
+      <input type="text" id="user-input" placeholder="Want to learn about gratitude? Ask me anything!" class="chat-input">
+      <button onclick="sendToGratitudeAI()">Send</button>
+    </div>
+
+    <!-- Google Doc Embed -->
+    <iframe
+      src="https://docs.google.com/document/d/1HgN85zBdaRxuOWL_brRfK6KlfWYMJJELroyOQ3jKKkU/edit?tab=t.88se4hq5f3he/edit"
+      class="tool-iframe"
+      allow="autoplay"
+      frameborder="0">
+    </iframe>
+
+  </div>
+</section>
+
+  </div>  <!-- Scripts -->  <script src="gratitude.frontend.js"></script>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
+    AOS.init({ once: true, duration: 1000 });
+  </script></body>
+</html>

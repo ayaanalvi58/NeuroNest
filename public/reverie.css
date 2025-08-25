@@ -1,0 +1,180 @@
+/* === Base Styles === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: url('socratesreflection.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* === Container & Section Layouts === */
+.container {
+  width: 100%;
+  padding: 2rem 5vw;
+}
+
+.section {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 4rem 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Split Layouts === */
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.left, .right {
+  flex: 1 1 48%;
+  padding: 2rem;
+}
+
+/* === Typography === */
+h1.title {
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: gold;
+}
+
+blockquote.quote {
+  font-size: 2rem;
+  font-style: italic;
+  text-align: right;
+  opacity: 0.9;
+  color: gold;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.7rem;
+  line-height: 1.5;
+  max-width: 900px;
+}
+
+/* === Tools Section === */
+.golden-heading {
+  text-align: center;
+  color: gold;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.golden-heading p {
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 1rem;
+  max-width: 800px;
+}
+
+/* === Chat & Iframe Section === */
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.tool-iframe {
+  flex: 1 1 45%;
+  min-width: 400px;
+  height: 550px;
+  border: 2px solid gold;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.chat-container {
+  flex: 1 1 45%;
+  min-width: 400px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+.chat-log {
+  height: 420px;
+  overflow-y: auto;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  color: white;
+}
+
+#user-input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+button[onclick="sendToReverieAI()"] {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, gold, goldenrod);
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.3s ease;
+}
+
+button[onclick="sendToReverieAI()"]:hover {
+  background: linear-gradient(to right, #f1c40f, #d4af37);
+}
+
+/* === AOS Animation Defaults === */
+[data-aos] {
+  transition-property: transform, opacity;
+  transition-duration: 1s;
+}
+.chat-bubble.user {
+  background: #222;
+  color: #f0e68c;
+  align-self: flex-end;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.chat-bubble.ai {
+  background: #111;
+  color: #FFD700;
+  align-self: flex-start;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.chat-bubble.ai.error {
+  color: red;
+}

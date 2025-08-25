@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meditation AI</title>
+  <link rel="stylesheet" href="meditation.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Hero Section -->
+    <section class="section" id="hero">
+      <div class="split">
+        <h1 class="title" data-aos="fade-right">Meditation AI</h1>
+        <blockquote class="quote" data-aos="fade-left">
+          "Meditation is not evasion; it is a serene encounter with reality."
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="section" id="info">
+      <div class="split">
+        <div class="left" data-aos="fade-up">
+          <h2>Why Meditate?</h2>
+          <p>Meditation anchors the mind, builds mental resilience, and reveals peace within the chaos. It's a gateway to clarity, not a pause from life—but a return to it.</p>
+        </div>
+        <div class="right" data-aos="fade-up" data-aos-delay="300">
+          <h2>Benefits of Meditation</h2>
+          <p>It improves mental clarity, lowers stress, enhances focus, sharpens emotional control, and deepens presence in everyday life.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="section" id="tools">
+      <h2 data-aos="fade-up" class="golden-heading">Begin Your Session
+        <p>Meditation AI helps you unwind and realign. Set a timer, breathe, and let the silence guide you home.</p>
+      </h2>
+      <div class="tools" data-aos="fade-up" data-aos-delay="300">
+
+        <!-- Timer -->
+        <div class="chat-container">
+          <label for="duration" style="display:block;margin-bottom:10px;font-size:1.2rem">Set Timer (minutes):</label>
+          <input type="number" id="duration" placeholder="e.g., 10" style="width:100%;padding:10px;font-size:1rem;margin-bottom:10px;border-radius:8px">
+          <button onclick="startMeditation()" style="width:100%;padding:14px;background:linear-gradient(to right, #8e9eab, #eef2f3);border:none;border-radius:8px;font-weight:bold;cursor:pointer;font-size:1.1rem;">Start Meditation</button>
+          <div id="timer-display" style="font-size:3rem;text-align:center;margin-top:20px;">00:00</div>
+        </div>
+
+        <!-- Meditation AI Chatbox -->
+        <div class="chat-container">
+          <div id="chat-log" class="chat-log" style="max-height: 300px; overflow-y: auto; margin-bottom: 10px;"></div>
+          <input type="text" id="user-input" placeholder="What do you want to meditate on today?" class="chat-input" style="width:100%;padding:10px;border-radius:8px;margin-bottom:10px;font-size:1rem;">
+          <button class="send-btn" style="width:100%;padding:14px;background:linear-gradient(to right, #f0e68c, #d4af37);border:none;border-radius:8px;font-weight:bold;cursor:pointer;font-size:1.1rem;">Send</button>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Audio Chimes -->
+  <audio id="startChime" src="https://www.soundjay.com/button/sounds/button-3.mp3" preload="auto"></audio>
+  <audio id="endChime" src="https://www.soundjay.com/button/sounds/button-4.mp3" preload="auto"></audio>
+
+  <!-- Timer Script -->
+  <script>
+    let interval;
+    function startMeditation() {
+      const startChime = document.getElementById("startChime");
+      const endChime = document.getElementById("endChime");
+      const duration = parseInt(document.getElementById("duration").value);
+      const timerDisplay = document.getElementById("timer-display");
+
+      if (!duration || duration <= 0) {
+        alert("Please enter a valid duration.");
+        return;
+      }
+
+      clearInterval(interval);
+      startChime.play();
+
+      let timeLeft = duration * 60;
+      interval = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+          endChime.play();
+        }
+        timeLeft--;
+      }, 1000);
+    }
+  </script>
+
+  <!-- AI Chat Functionality -->
+  <script src="productivity.frontend.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ once: true, duration: 1000 });</script>
+</body>
+</html>

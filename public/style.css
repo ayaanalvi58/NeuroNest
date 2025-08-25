@@ -1,0 +1,299 @@
+/* Fonts and Base Setup */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  color: black;
+  line-height: 2
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  font-family: 'Luminari', sans-serif;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.05);    /* Adjusted darker tone */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.01);
+  padding: 1.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-right a {
+    animation: slideInDown 1s ease-out forwards;
+  margin-left: 20px;
+  text-decoration: none;
+  margin: 0 20px;
+
+  color: #1f1f1f;
+  font-weight: 500;
+}
+
+.navbar-right a:hover {
+  color: #000;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url(foggyforest.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  display: flex;
+  margin-top: 0;
+  padding-top: 0;
+  position: relative;
+  z-index: 0;
+  flex-direction: row-reverse;
+  height: 100vh;
+  padding: 0 5%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-image img {
+    animation: slideInLeft 1.2s ease-in-out forwards;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-text {
+    animation: slideInRight 1.2s ease-in-out forwards;
+  flex: 1;
+  padding-left: 50px;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.3rem;
+  font-style: italic;
+}
+/* === Animations === */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.about-section {
+  position: relative;
+  height: 100vh;
+  background-image: url('foggylake.jpg'); /* Your new image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.about-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Subtle dark overlay */
+  z-index: 1;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 700px;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.3rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.2s ease-out 0.3s, transform 1.2s ease-out 0.3s;
+}
+
+.about-section.visible .about-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+.mission-section {
+  min-height: 100vh;
+  background: url('greenfoggymontain.jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+}
+
+.mission-content {
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.5); /* Slight dark overlay */
+  color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#basics {
+  padding: 100px 20px;
+  background: url('slide4monk.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  min-height: 100vh;
+}
+
+#basics::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Optional dark overlay */
+  z-index: -1;
+}
+
+#basics h2 {
+  font-size: 2.8rem;
+  margin-bottom: 60px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.basic-box {
+  padding: 40px 20px;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.basic-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.footer-section {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.footer-container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.contact-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.contact-company {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.contact-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.contact-phone {
+  font-size: 1.1rem;
+  margin-top: 8px;
+}

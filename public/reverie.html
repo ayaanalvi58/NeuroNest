@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reverie AI</title>
+  <link rel="stylesheet" href="reverie.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Section 1: Hero Section -->
+    <section class="section" id="hero">
+      <div class="split">
+        <h1 class="title" data-aos="fade-right">Reverie AI</h1>
+        <blockquote class="quote" data-aos="fade-left">
+          "The unexamined life is not worth living."
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Section 2: Why Reflect & Benefits -->
+    <section class="section" id="info">
+      <div class="split">
+        <div class="left" data-aos="fade-up">
+          <h2>Why Reflect?</h2>
+          <p>Reflection builds self-awareness, clarity, and emotional intelligence. It sharpens your decisions and deepens your understanding of life’s direction.</p>
+        </div>
+        <div class="right" data-aos="fade-up" data-aos-delay="300">
+          <h2>Benefits of Reflection</h2>
+          <p>Improves focus, strengthens emotional control, refines goals, and fosters growth. It's how you master yourself before mastering the world.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Reverie Tools -->
+    <section class="section" id="tools">
+      <h2 data-aos="fade-up" class="golden-heading">Start Your Reflection Journey
+        <p>Reverie AI guides your inner exploration. Reflect, question, and grow—with tools that turn silence into insight.</p>
+      </h2>
+      <div class="tools" data-aos="fade-up" data-aos-delay="300">
+
+        <!-- Reverie AI Chat -->
+        <div class="chat-container">
+          <div id="chat-log" class="chat-log"></div>
+          <input type="text" id="user-input" placeholder="What do you want to reflect on today?" class="chat-input">
+          <button onclick="sendToReverieAI()">Send</button>
+        </div>
+
+        <!-- Google Doc Embed -->
+        <iframe
+          src="https://docs.google.com/document/d/1o4dNYoHJWMKlI-8Fped25TIRYUKmDArcnyhPj9qgw-A/edit?tab=t.u647xif31khg"
+          class="tool-iframe"
+          allow="autoplay"
+          frameborder="0">
+        </iframe>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="reverie.frontend.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 1000 });
+  </script>
+</body>
+</html>

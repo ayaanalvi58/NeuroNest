@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('drcortex.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.cortex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  animation: slideIn 1.2s ease-out forwards;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 4px black;
+}
+
+.cortex-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input#userInput {
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background-color: rgba(255,255,255,0.8);
+}
+
+#cortexOutput {
+  padding: 16px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 12px;
+  color: white;
+  min-height: 80px;
+  font-size: 1rem;
+}
+/* Iframe styling */
+.iframe-container {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 1s ease;
+  max-width: 90%;
+  margin: 5rem auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Slide in animation */
+.iframe-container.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll-based fade-in */
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.fade-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.dr-cortex-container {
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  color: white;
+  font-family: 'Leominari', sans-serif;
+}
+
+#chat-form {
+  display: flex;
+  gap: 10px;
+}
+
+#user-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+.chat-output {
+  margin-top: 20px;
+}
+
+.user-msg,
+.ai-msg {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.user-msg {
+  background: rgba(255, 255, 255, 0.2);
+  text-align: right;
+}
+
+.ai-msg {
+  background: rgba(0, 0, 0, 0.3);
+  text-align: left;
+}

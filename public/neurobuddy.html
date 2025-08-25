@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeuroBuddy</title>
+  <link rel="stylesheet" href="neurobuddy.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">NeuroBuddy</div>
+    <ul class="nav-links">
+      <li><a href="dr-cortex.html">Dr. Cortex</a></li>
+      <li><a href="neurobuddy.html" class="active">NeuroBuddy</a></li>
+        <li><a href="#">Gratitude</a></li>
+        <li><a href="#">Reflection</a></li>
+        <li><a href="#">Goal Tracking</a></li>
+    </ul>
+  </nav>
+
+  <div class="neurobuddy-container">
+    <div id="chat-output" class="chat-output"></div>
+
+    <form id="chat-form">
+      <input
+        id="user-input"
+        type="text"
+        placeholder="How are you feeling today?"
+        required
+      />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="neurobuddy.frontend.js"></script>
+</body>
+</html>

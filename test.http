@@ -1,0 +1,7 @@
+### Test Meditation AI
+POST http://localhost:3000/meditation
+Content-Type: application/json
+
+{
+  "message": "I’ve been feeling down lately, but I’m trying to stay mindful."
+}
