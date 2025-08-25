@@ -194,7 +194,9 @@ app.post("/api/gratitude", async (req, res) => {
 });
 const meditationHistory = [];
 
+// replace your fixed 3000 with this:
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, () => {
-  console.log("GPT agent is live at http://localhost:3000");
+app.listen(PORT, () => {
+  console.log(`GPT agent is live at http://localhost:${PORT}`);
 });
